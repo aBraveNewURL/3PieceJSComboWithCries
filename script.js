@@ -34,36 +34,33 @@
 
 
 
-
-
-
-
-
-
-
 // Assignment Code and global variables:
-var generateBtn = document.querySelector("#generate");
-// figure out how to add DOUBLE QUOTES to list of possible characters and increase possibleChars string length by 1  !#$%&')(*+,-./:;=><?@\][^_`|}{~
+// var generateBtn = document.querySelector("#generate");
+var addSpecials = ["!","#","$","%","&","'",")","(","*","+",",","-",".","/",":",";","=",">","<","?","@","\\","]","[","^","_","`","|","}","{","~"];
+var addCaps = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
+specialCaps = addSpecials.concat(addCaps);
 
+console.log(specialCaps[50]);
+console.log(specialCaps.length)
 
-// Write password to the #password input
-function writePassword() {
+// var addNums = 
+// var itemPool = 
+// // figure out how to add DOUBLE QUOTES to list of possible characters and increase possibleChars string length by 1  !#$%&')(*+,-./:;=><?@\][^_`|}{~
+// // Write password to the #password input
+// function writePassword() {
 
-  var possibleChars = "!#$%&')(*+,-./:;=><?@\][^_`|}{~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-  passwordText.value = password;
-
-  for (var i = 0; i < 5; i++)
-  password += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length))
-  console.log(password);
   
-}
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+//   passwordText.value = password;
+
+  
+// }
 
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
 
 
 
