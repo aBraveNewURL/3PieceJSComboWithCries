@@ -2,44 +2,68 @@ var generateBtn = document.querySelector("#generate");
 
 function writePassword() {
 
-    var pwLength = window.prompt("Choose your password length (must be between 8 and 128 characters)");
     var addSpecials = ["!","#","$","%","&","'",")","(","*","+",",","-",".","/",":",";","=",">","<","?","@","\\","]","[","^","_","`","|","}","{","~"];
     var addCaps = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     var addLowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     var addNumbers = ["0","1","2","3","4","5","6","7","8","9"];
     var charSelection = [];
-
-    if (pwLength < 8 || pwLength > 128) {
-
-        window.alert("Please try again and enter a number between 8 and 128");
-      } 
-    else if (pwLength >= 8 && pwLength <= 128) {
+    var password= '';
+    
+    pwLength = window.prompt("Choose your password length (must be between 8 and 128 characters)");
+    if (pwLength >= 8 && pwLength <= 128) {
       console.log("Selected password length is " + pwLength + " characters.")
     }      
+    else if (pwLength < 8 || pwLength > 128) {
+
+      window.alert("Please refresh and try again and enter a number between 8 and 128");
+    } 
     else {
-        window.alert("Please try again with a *number* between 8 and 128");
-      }
-    
-
-    addSpecials = window.prompt("Include special characters/symbols? (y/n)");
+        window.alert("Please refresh and try again with a *number* between 8 and 128");
+    }
+  
+    specialsWindow = window.confirm("Include special characters/symbols?");
         
-      if (addSpecials === "y","Y") {
-        addSpecials.concat[charSelection];
-        console.log(charSelection.length);
-                
+      if (specialsWindow === true) {
+        charSelection = charSelection.concat(addSpecials);
+        console.log(charSelection)                
       }
-
-      else if (addSpecials === "n","N") {       
-      }
-
-   
-
-     console.log("End of run.")
-
-    return writePassword;
     
+    capsWindow = window.confirm("Include uppercase letters?");
+        
+    if (capsWindow === true) {
+        charSelection = charSelection.concat(addCaps);
+        console.log(charSelection)                
     }
 
+    lowercaseWindow = window.confirm("Include lowercase letters?");
+        
+    if (capsWindow === true) {
+          charSelection = charSelection.concat(addLowercase);
+          console.log(charSelection)                
+    }
+
+    numsWindow = window.confirm("Include numbers?");
+        
+    if (numsWindow === true) {
+            charSelection = charSelection.concat(addNumbers);
+            console.log(charSelection)                
+    }
+      
+
+    for ( var i = 0; i < pwLength; i++ ) {
+          
+          password += charSelection.charAt(Math.floor(Math.random() * charSelection.length)) 
+      };
+      console.log("End of run.");
+    return ;
+    
+
+  }
+
+  generateBtn.addEventListener("click", writePassword);
+
+
+  
 
 
 
@@ -53,7 +77,37 @@ function writePassword() {
 
 
 
-    generateBtn.addEventListener("click", writePassword);
+
+  // function writePassword(length) {
+    //     var pwLength = "45";
+    //     var result           = '';
+    //     var charSelection       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    //     var charactersLength = characters.length;
+    //     for ( var i = 0; i < length; i++ ) {
+    //       result += characters.charAt(Math.floor(Math.random() * 
+    //  charactersLength));
+    //    }
+    //    return result;
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
