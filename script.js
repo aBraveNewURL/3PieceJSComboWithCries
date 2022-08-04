@@ -1,69 +1,84 @@
-// // Assignment Code and global variables:
-// var generateBtn = document.querySelector("#generate");
-// // figure out how to add DOUBLE QUOTES to list of possible characters and increase possibleChars string length by 1  !#$%&')(*+,-./:;=><?@\][^_`|}{~
-
-
-
-// // Write password to the #password input
-// function writePassword() {
-
-//   var possibleChars = "!#$%&')(*+,-./:;=><?@\][^_`|}{~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-//   passwordText.value = password;
-
-//   for (var i = 0; i < 5; i++)
-//   password += possibleChars.charAt(Math.floor(Math.random() * possibleChars.length))
-//   console.log(password);
-  
-// }
-
-
-// Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
-generateBtn.addEventListener("click", writePassword);
 
+function writePassword() {
 
-
-function generatePassword() {
-    // //      User clicks GENERATE PASSWORD button, a prompt asking for character length comes up:
-    // console.log("red button is clicked...");
-        //  "onclick---->("How Long Should the New Password Be? (must be >= 8 and <= 128) :") "
     var pwLength = window.prompt("Choose your password length (must be between 8 and 128 characters)");
-    var addSymbols = "";
-    var addUppercase = "";
-    var addLowercase = "";
-    var addNumbers = "";
+    var addSpecials = ["!","#","$","%","&","'",")","(","*","+",",","-",".","/",":",";","=",">","<","?","@","\\","]","[","^","_","`","|","}","{","~"];
+    var addCaps = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+    var addLowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    var addNumbers = ["0","1","2","3","4","5","6","7","8","9"];
+    var charSelection = [];
 
     if (pwLength < 8 || pwLength > 128) {
+
         window.alert("Please try again and enter a number between 8 and 128");
       } 
-      else if (pwLength >= 8 && pwLength <= 128) {
-        addSymbols = window.confirm("Include special characters/symbols?");
-        if (addSymbols != true) {
-
-        }
-
-      } 
-      else {
+    else if (pwLength >= 8 && pwLength <= 128) {
+      console.log("Selected password length is " + pwLength + " characters.")
+    }      
+    else {
         window.alert("Please try again with a *number* between 8 and 128");
       }
     
-    
 
-    return "";
+    addSpecials = window.prompt("Include special characters/symbols? (y/n)");
+        
+      if (addSpecials === "y","Y") {
+        addSpecials.concat[charSelection];
+        console.log(charSelection.length);
+                
+      }
+
+      else if (addSpecials === "n","N") {       
+      }
+
+   
+
+     console.log("End of run.")
+
+    return writePassword;
     
     }
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     generateBtn.addEventListener("click", writePassword);
 
-    // if (pwLength >=8 && pwLength <=128) {
-    //     console.log("Acceptable number")
-    // }
 
-    // else (pwLength <8 || pwLength >128) {
-    //     console.log("Unacceptable number")
-    // }
+
+
+
+
+
+
+
+
+
+
+    // generateBtn.addEventListener("click", writePassword);
+
+    
+// //      User clicks GENERATE PASSWORD button, a prompt asking for character length comes up:
+// console.log("red button is clicked...");
+//  "onclick---->("How Long Should the New Password Be? (must be >= 8 and <= 128) :") "
+// if (pwLength >=8 && pwLength <=128) {
+//     console.log("Acceptable number")
+// }
+
+// else (pwLength <8 || pwLength >128) {
+//     console.log("Unacceptable number")
+// }
 
 // //      if and else if statements can reject incorrect answers (non-numerical or less than 8 or more than 128):
 // // if (chosenLength is !NOT in the array (8,9,10,11,12,13,14,15,16,17,18...) ---> Try again please, script restarts [how is this done?])
@@ -105,10 +120,10 @@ function generatePassword() {
 // // Assignment Code and global variables:
 // // 
 
-// // var addSpecials = ["!","#","$","%","&","'",")","(","*","+",",","-",".","/",":",";","=",">","<","?","@","\\","]","[","^","_","`","|","}","{","~"];
-// // var addCaps = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-// // var addLowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-// // var addNumbers = ["0","1","2","3","4","5","6","7","8","9"];
+// var addSpecials = ["!","#","$","%","&","'",")","(","*","+",",","-",".","/",":",";","=",">","<","?","@","\\","]","[","^","_","`","|","}","{","~"];
+// var addCaps = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+// var addLowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// var addNumbers = ["0","1","2","3","4","5","6","7","8","9"];
 
 // // var charSelection = "";
 
